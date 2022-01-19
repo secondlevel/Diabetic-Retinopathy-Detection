@@ -1,1 +1,1 @@
-# Diabetic-Retinopathy-Detection-
+# Diabetic-Retinopathy-Detection (Summer Course homework 3)
