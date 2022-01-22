@@ -66,32 +66,46 @@ The data used in this project can be obtained from Google driver, which is calle
 
 A total of four methods are provided in this project to train the model, corresponding to the four files **ResNet18_nonpretrained_model.py**, **ResNet18_pretrained_model.py**, **ResNet50_nonpretrained_model.py** and **ResNet50_pretrained_model.py**.
 
-You can get some detailed introduction and experimental results in the link below.
+You can get some detailed introduction and experimental results in the link below.  
 https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf
 
-These training file would be executed by following instructions.
+You can config the training parameters through the following argparse, and use the following instructions to train different method.  
+
+```bash=
+parser = argparse.ArgumentParser()
+parser.add_argument('--epochs', type=int, default='10', help='training epochs')
+parser.add_argument('--image_size', type=int, default='224', help='model input image size')
+parser.add_argument('--n_channels', type=int, default='3', help='model input image channels')
+parser.add_argument('--train_batch_size', type=int, default='256', help='batch size to training')
+parser.add_argument('--test_batch_size', type=int, default='281', help='batch size to testing')
+parser.add_argument('--number_worker', type=int, default='4', help='number worker')
+parser.add_argument('--learning_rate', type=float, default='5e-3', help='learning rate')
+parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+opt = parser.parse_args()
+```
 
 - #### ResNet18 pretrained model
 
 ```bash=
-python ResNet18_pretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+python ResNet18_pretrained_model.py --epochs 10 --save_model --save_csv
 ```
 
 - #### ResNet50 pretrained model
 
 ```bash=
-python ResNet50_pretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+python ResNet50_pretrained_model.py --epochs 10 --save_model --save_csv
 ```
 
 - #### ResNet18 non-pretrained model
 
 ```bash=
-python ResNet18_nonpretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+python ResNet18_nonpretrained_model.py --epochs 5 --save_model --save_csv
 ```
 
 - #### ResNet50 non-pretrained model
 
 ```bash=
-python ResNet50_nonpretrained_model.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
+python ResNet50_nonpretrained_model.py --epochs 5 --save_model --save_csv
 ```
 
