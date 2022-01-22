@@ -60,7 +60,7 @@ In this project, the training and testing data were provided by [**Kaggle compet
 
 There are a total of 28100 images in the training data and a total of 7026 images in the testing data. In addition, there are a total of 5 categories in the dataset, corresponding to the severity of the five types of diabetes: No, Mild, Moderate, Severe and Proliferative DR.
 
-The data used in this project can be obtained from Google driver, which is called [**data**](https://drive.google.com/drive/folders/1ENoGQj9W6B_4a4W_ajAJZU8K7o_5Tf8R?usp=sharing) directory. Just download the folder from Google driver and extract it into the **Diabetic-Retinopathy-Detection** folder.
+The data used in this project can be obtained from Google driver, which is called [**data**](https://drive.google.com/drive/folders/1ksze4vC3taBgPDPpzOBAPmMGY0BtrHwt?usp=sharing) directory. Just download the folder from Google driver and extract it into the **Diabetic-Retinopathy-Detection** folder.
 
 ## Training
 
