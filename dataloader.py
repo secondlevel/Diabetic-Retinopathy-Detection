@@ -147,7 +147,3 @@ class RetinopathyLoader(data.Dataset):
 
 # if __name__ == "__main__":
 #     img,label = getData("train")
-
-
-
-    
