@@ -17,6 +17,7 @@ import pandas as pd
 from tqdm import tqdm
 import itertools
 import numpy as np
+import argparse
 
 def testing(y_pred_All_test_batch,y_true_All_test_batch,test_loader,model,device):
 
@@ -131,10 +132,22 @@ def plot_confusion_matrix(y_pred,y_true):
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--epochs', type=int, default='10', help='training epochs')
+    parser.add_argument('--image_size', type=int, default='224', help='model input image size')
+    parser.add_argument('--n_channels', type=int, default='3', help='model input image channels')
+    parser.add_argument('--train_batch_size', type=int, default='256', help='batch size to training')
+    parser.add_argument('--test_batch_size', type=int, default='281', help='batch size to testing')
+    parser.add_argument('--number_worker', type=int, default='4', help='number worker')
+    parser.add_argument('--learning_rate', type=float, default='5e-3', help='learning rate')
+    parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+    parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+    opt = parser.parse_args()
+
     device = torch.device("cuda:0")
     path = os.path.dirname(os.path.abspath(__file__))+"/data/"
-    epochs = 10
-    lr = 5e-3
+    epochs = opt.epochs
+    lr = opt.learning_rate
     min_loss = 1
     max_accuracy = 0
     max_test_accuracy = 0
@@ -145,7 +158,7 @@ if __name__ == "__main__":
     train_transform = transforms.Compose([
     transforms.ToTensor(), # range [0, 255] -> [0.0,1.0]
     # transforms.RandomCrop(224),
-    transforms.Resize((224,224)),
+    transforms.Resize((opt.image_size,opt.image_size)),
     # transforms.RandomVerticalFlip(),
     # transforms.RandomHorizontalFlip(),
     # transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.4, hue=0.1)
@@ -154,15 +167,15 @@ if __name__ == "__main__":
 
     test_transform = transforms.Compose([
     transforms.ToTensor(), # range [0, 255] -> [0.0,1.0]
-    transforms.Resize((224,224))
+    transforms.Resize((opt.image_size,opt.image_size))
     # transforms.Normalize(mean=[0.485, 0.456, 0.406],std=[0.229, 0.224, 0.225])
     ])
     
     train_dataset = RetinopathyLoader(path,"train",transform=train_transform)
     test_dataset = RetinopathyLoader(path,"test",transform=test_transform)
     
-    train_loader = DataLoader(train_dataset,batch_size=256,num_workers=4)
-    test_loader = DataLoader(test_dataset,batch_size=281,num_workers=4)
+    train_loader = DataLoader(train_dataset,batch_size=opt.train_batch_size,num_workers=opt.number_worker)
+    test_loader = DataLoader(test_dataset,batch_size=opt.test_batch_size,num_workers=opt.number_worker)
     #1405
     #7025
 
@@ -189,7 +202,7 @@ if __name__ == "__main__":
 
     # model.to(device)
     model.cuda(0)
-    summary(model.cuda(),(3,224,224))
+    summary(model.cuda(),(opt.n_channels,opt.image_size,opt.image_size))
 
     optimizer = optim.Adam(model.parameters(),lr = lr)
     # optimizer = optim.RMSprop(model.parameters(),lr = lr, momentum = 0.9)
@@ -246,14 +259,16 @@ if __name__ == "__main__":
 
         # if train_loss<min_loss:
         #     min_loss = train_loss
-              torch.save(model.state_dict(), filepath)
-        
-        # if train_accuracy>max_accuracy:
-        #     max_accuracy = train_accuracy
         #     torch.save(model.state_dict(), filepath)
+        
+        if train_accuracy>max_accuracy:
+            max_accuracy = train_accuracy
+            if opt.save_model:
+                torch.save(model.state_dict(), filepath)
 
     
     df = pd.DataFrame({"loss":loss_history,"train_accuracy_history":train_accuracy_history,"test_accuracy_history":test_accuracy_history})
     # print(df)
-    df.to_csv(filepath_csv,encoding="utf-8-sig")
+    if opt.save_csv:
+        df.to_csv(filepath_csv,encoding="utf-8-sig")
     plot_confusion_matrix(y_pred_All_test_batch,y_true_All_test_batch)
