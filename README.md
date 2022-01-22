@@ -65,3 +65,33 @@ The data used in this project can be obtained from Google driver, which is calle
 ## Training
 
 A total of four methods are provided in this project to train the model, corresponding to the four files **ResNet18_nonpretrained_model.py**, **ResNet18_pretrained_model.py**, **ResNet50_nonpretrained_model.py** and **ResNet50_pretrained_model.py**.
+
+You can get some detailed introduction and experimental results in the link below.
+https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf
+
+These training file would be executed by following instructions.
+
+- #### ResNet18 pretrained model
+
+```bash=
+python ResNet18_pretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+```
+
+- #### ResNet50 pretrained model
+
+```bash=
+python ResNet50_pretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+```
+
+- #### ResNet18 non-pretrained model
+
+```bash=
+python ResNet18_nonpretrained_model.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
+```
+
+- #### ResNet50 non-pretrained model
+
+```bash=
+python ResNet50_nonpretrained_model.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
+```
+
