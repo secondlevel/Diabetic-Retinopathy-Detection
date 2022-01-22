@@ -23,7 +23,7 @@ def testing_batch_accuracy(test_loader,model,device):
 
             # y_true_All_test_batch+=y_test
             
-            x_test, y_test = x_test.to(device), y_test.to(device)
+            x_test,y_test = x_test.to(device),y_test.to(device)
             y_pred_test = model(x_test)
 
             correct_test = (torch.max(y_pred_test,1)[1]==y_test).sum().item()
@@ -39,17 +39,16 @@ def testing_batch_accuracy(test_loader,model,device):
 if __name__ == "__main__":
 
     model_list=[ResNet18_pretrained_return_model, ResNet18_nonpretrained_return_model, ResNet50_pretrained_return_model, ResNet50_nonpretrained_return_model]
-    model_file_path=["ResNet18_pretrained.rar", "ResNet18_nonpretrained.rar", "ResNet50_pretrained.rar", "ResNet50_nonpretrained.rar"]
+    model_file_path=["ResNet18_pretrained.rar","ResNet18_nonpretrained.rar","ResNet50_pretrained.rar","ResNet50_nonpretrained.rar"]
 
     data_path = os.path.dirname(os.path.abspath(__file__))+"/data/"
 
-    test_transform = transforms.Compose
-    ([
-        transforms.ToTensor(), # range [0, 255] -> [0.0,1.0]
-        transforms.Resize((224,224))
+    test_transform = transforms.Compose([
+    transforms.ToTensor(), # range [0, 255] -> [0.0,1.0]
+    transforms.Resize((224,224))
     ])
 
-    test_dataset = RetinopathyLoader(data_path, "test", transform=test_transform)
+    test_dataset = RetinopathyLoader(data_path,"test",transform=test_transform)
     test_loader = DataLoader(test_dataset,batch_size=281,num_workers=4)
     print()
 
