@@ -1,8 +1,8 @@
 # Diabetic-Retinopathy-Detection (Summer Course homework 3)
 
-This project is to classify people's degree of diabetes through pictures of retinopathy, which is related to [kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection#description).  
+This project is to classify people's degree of diabetes through pictures of retinopathy, which is related to [kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection#description). All the models in this project were built by pytorch.
 
-In addition, please refer to the following report link for detailed report and description of the experimental results.  
+In addition, please refer to the following report link for detailed report and description of the experimental results.
 https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf
 
 <p float="center">
@@ -40,7 +40,7 @@ $ pip install tqdm
 
 In this project, I used the architecture of [**ResNet 18**](https://arxiv.org/pdf/1512.03385.pdf) and [**ResNet 50**](https://arxiv.org/pdf/1512.03385.pdf) to classify images.  
 
-Due to the skip connection and shortcut connection methods in the ResNet architecture, gradient vanishing and exploding gradient problem are less likely to occur, and a model for classifying pictures can be quickly obtained.
+Due to the skip connection and shortcut connection methods in the ResNet architecture, gradient vanishing and exploding gradient problems are less likely to occur, and a model has lower parameters to train.
 
 - ### skip connection
 
@@ -56,4 +56,12 @@ Due to the skip connection and shortcut connection methods in the ResNet archite
 
 ## Data Description
 
-In this project, the training and testing data were provided by [**Kaggle competition-Diabetic Retinopathy Detection**](https://www.kaggle.com/c/diabetic-retinopathy-detection/data). 
+In this project, the training and testing data were provided by [**Kaggle competition-Diabetic Retinopathy Detection**](https://www.kaggle.com/c/diabetic-retinopathy-detection/data).  
+
+There are a total of 28100 images in the training data and a total of 7026 images in the testing data. In addition, there are a total of 5 categories in the dataset, corresponding to the severity of the five types of diabetes: No, Mild, Moderate, Severe and Proliferative DR.
+
+The data used in this project can be obtained from Google driver, which is called [**data**](https://drive.google.com/drive/folders/1ENoGQj9W6B_4a4W_ajAJZU8K7o_5Tf8R?usp=sharing) directory. Just download the folder from Google driver and extract it into the **Diabetic-Retinopathy-Detection** folder.
+
+## Training
+
+A total of four methods are provided in this project to train the model, corresponding to the four files **ResNet18_nonpretrained_model.py**, **ResNet18_pretrained_model.py**, **ResNet50_nonpretrained_model.py** and **ResNet50_pretrained_model.py**.
