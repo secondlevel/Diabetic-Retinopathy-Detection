@@ -92,7 +92,6 @@ In this project, you can put the folder on the specified path according to the p
 │  ├─ ResNet50_nonpretrained.rar
 │  └─ ResNet50_pretrained.rar
 ├─ Plot_History_Result.py
-├─ README.md
 ├─ ResNet18_nonpretrained_model.py
 ├─ ResNet18_pretrained_model.py
 ├─ ResNet50_nonpretrained_model.py
@@ -100,7 +99,8 @@ In this project, you can put the folder on the specified path according to the p
 ├─ test_img.csv
 ├─ test_label.csv
 ├─ train_img.csv
-└─ train_label.csv
+├─ train_label.csv
+└─ README.md
 ```
 
 ## Training
