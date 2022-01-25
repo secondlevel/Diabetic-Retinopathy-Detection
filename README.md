@@ -62,6 +62,23 @@ There are a total of 28100 images in the training data and a total of 7026 image
 
 The data used in this project can be obtained from Google driver, which is called [**data**](https://drive.google.com/drive/folders/1ksze4vC3taBgPDPpzOBAPmMGY0BtrHwt?usp=sharing) directory. Just download the folder from Google driver and extract it into the **Diabetic-Retinopathy-Detection** folder.
 
+## Directory Tree
+
+In this project, you can put the folder on the specified path according to the pattern in the following directory tree for training and testing.
+
+```bash=
+├── dir1
+│   ├── file11.ext
+│   └── file12.ext
+├── dir2
+│   ├── file21.ext
+│   ├── file22.ext
+│   └── file23.ext
+├── dir3
+├── file_in_root.ext
+└── README.md
+```
+
 ## Training
 
 A total of four methods are provided in this project to train the model, corresponding to the four files **ResNet18_nonpretrained_model.py**, **ResNet18_pretrained_model.py**, **ResNet50_nonpretrained_model.py** and **ResNet50_pretrained_model.py**.
