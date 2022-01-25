@@ -69,7 +69,7 @@ A total of four methods are provided in this project to train the model, corresp
 You can get some detailed introduction and experimental results in the link below.  
 https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf
 
-You can config the training parameters through the following argparse, and use the following instructions to train different method.  
+You can config the training parameters through the following argparse, and use the following instructions to train different model.  
 
 ```bash=
 parser = argparse.ArgumentParser()
@@ -109,3 +109,23 @@ python ResNet18_nonpretrained_model.py --epochs 5 --save_model --save_csv
 python ResNet50_nonpretrained_model.py --epochs 5 --save_model --save_csv
 ```
 
+## Testing
+
+You can display the testing results in different models by using the following commands which contains pretrained and non-pretrained models. The model weight could be downloaded from the [link](https://drive.google.com/drive/folders/1lWmzqmpvHbNxTR7fGrkWl5c4tRgq70wH?usp=sharing).    
+
+The detailed experimental result are in the following link.  
+https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf
+
+Then you will get the best result like this, each of the values were the testing accuracy.  
+
+|          | Pretrained | None-Pretrained |
+|:----------:|:------------:|:-----------------:|
+| ResNet18 | 0.758281   | 0.705448        |
+| ResNet50 | 0.774843   | 0.702573        |
+
+## Reference
+
+- https://www.kaggle.com/c/diabetic-retinopathy-detection#description
+- https://arxiv.org/pdf/1712.09913.pdf
+- https://ieeexplore.ieee.org/document/7780459
+- https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py
