@@ -67,16 +67,39 @@ The data used in this project can be obtained from Google driver, which is calle
 In this project, you can put the folder on the specified path according to the pattern in the following directory tree for training and testing.
 
 ```bash=
-├── dir1
-│   ├── file11.ext
-│   └── file12.ext
-├── dir2
-│   ├── file21.ext
-│   ├── file22.ext
-│   └── file23.ext
-├── dir3
-├── file_in_root.ext
-└── README.md
+├─ ALL_model.py
+├─ data
+│  ├─ 10003_left.jpeg
+│  ├─ 10003_right.jpeg
+│  ├─ 10007_left.jpeg
+│  ├─ 10007_right.jpeg
+│  ├─ 10009_left.jpeg
+│  ├─ 10009_right.jpeg
+│  ├─ 1000_left.jpeg
+│  ├─ ...
+│  ├─ ...
+│  └─ 99_right.jpeg
+├─ dataloader.py
+├─ history_csv
+│  ├─ ResNet18_nonpretrained.csv
+│  ├─ ResNet18_pretrained.csv
+│  ├─ ResNet50_nonpretrained.csv
+│  └─ ResNet50_pretrained.csv
+├─ model_testing.py
+├─ model_weight
+│  ├─ ResNet18_nonpretrained.rar
+│  ├─ ResNet18_pretrained.rar
+│  ├─ ResNet50_nonpretrained.rar
+│  └─ ResNet50_pretrained.rar
+├─ Plot_History_Result.py
+├─ ResNet18_nonpretrained_model.py
+├─ ResNet18_pretrained_model.py
+├─ ResNet50_nonpretrained_model.py
+├─ ResNet50_pretrained_model.py
+├─ test_img.csv
+├─ test_label.csv
+├─ train_img.csv
+└─ train_label.csv
 ```
 
 ## Training
