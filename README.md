@@ -67,7 +67,7 @@ The data used in this project can be obtained from Google driver, which is calle
 
 In this project, you can put the folder on the specified path according to the pattern in the following directory tree for training and testing.
 
-```bash=
+```bash
 ├─ ALL_model.py
 ├─ data
 │  ├─ 10003_left.jpeg
