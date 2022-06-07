@@ -6,7 +6,7 @@ In addition, please refer to the following report link for detailed report and d
 https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf
 
 <p float="center">
-  <img src="https://user-images.githubusercontent.com/44439517/150523554-3b088451-deab-4cbc-95d8-59e5a3f40c20.png" title="training curve" hspace="350"/>
+  <img src="https://user-images.githubusercontent.com/44439517/150523554-3b088451-deab-4cbc-95d8-59e5a3f40c20.png" title="training curve" hspace="300"/>
 </p>
 
 ## Hardware
