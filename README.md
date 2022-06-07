@@ -1,4 +1,4 @@
-# Diabetic-Retinopathy-Detection (Summer Course homework 3)
+# Diabetic-Retinopathy-Detection (Deep Learning and Practice  homework 3)
 
 This project is to classify people's degree of diabetes through pictures of retinopathy, which is related to [kaggle competition](https://www.kaggle.com/c/diabetic-retinopathy-detection#description). All the models in this project were built by pytorch.
 
