@@ -135,7 +135,7 @@ In this project, **Crossentropy** is the loss function, and **Accuracy** is the 
 
 A total of four methods are provided in this project to train the model, corresponding to the four files **ResNet18_nonpretrained_model.py**, **ResNet18_pretrained_model.py**, **ResNet50_nonpretrained_model.py** and **ResNet50_pretrained_model.py**.
 
-You can get some detailed introduction and experimental results in this[link](https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf).  
+You can get some detailed introduction and experimental results in this [link](https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experiment%20Report.pdf).  
 
 You can config the training parameters through the following argparse, and use the following instructions to train different model.  
 
