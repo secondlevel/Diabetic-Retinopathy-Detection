@@ -21,11 +21,17 @@ The first GPU used is NVIDIA GeForce GTX TITAN X, and the second is NVIDIA GeFor
   
 ## Requirement
 
-In this work, I use Anaconda and Pip to manage my environment.
+In this work, you have two option to build the environment.
 
+### First option (recommend)
+```bash
+$ conda env create -f environment.yml
+```
+
+### Second option
 ```bash=
-$ conda create --name retinopathyenv python=3.8 -y
-$ conda activate retinopathyenv
+$ conda create --name Summer python=3.8 -y
+$ conda activate Summer
 $ conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.2 -c pytorch
 $ conda install numpy
 $ conda install matplotlib -y
