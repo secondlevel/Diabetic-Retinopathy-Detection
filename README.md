@@ -21,7 +21,7 @@ The first GPU used is NVIDIA GeForce GTX TITAN X, and the second is NVIDIA GeFor
   
 ## Requirement
 
-In this work, you have two option to build the environment.
+In this work, you can use the following two option to build the environment.
 
 ### First option (recommend)
 ```bash
