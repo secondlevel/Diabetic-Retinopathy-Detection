@@ -48,13 +48,13 @@ In this project, I used the architecture of [**ResNet 18**](https://arxiv.org/pd
 
 Due to the skip connection and shortcut connection methods in the ResNet architecture, gradient vanishing and exploding gradient problems are less likely to occur, and a model has lower parameters to train.
 
-- ### skip connection
+### skip connection
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/150625583-8db03440-2137-45fb-ae66-66c8b792a5fd.png" title="skip connection" width="400" hspace="300"/>
 </p>
 
-- ### shortcut connection
+### shortcut connection
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/150625573-56d1be38-9359-4307-b8fc-9401afcd7900.png" title="shortcut connection" width="800" hspace="100"/>
