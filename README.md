@@ -141,7 +141,7 @@ https://github.com/secondlevel/Diabetic-Retinopathy-Detection/blob/main/Experime
 
 You can config the training parameters through the following argparse, and use the following instructions to train different model.  
 
-```bash=
+```python
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default='10', help='training epochs')
 parser.add_argument('--image_size', type=int, default='224', help='model input image size')
