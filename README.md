@@ -159,25 +159,25 @@ parser.add_argument('--save_csv', action='store_true', help='check if you want t
 opt = parser.parse_args()
 ```
 
-- #### ResNet18 pretrained model
+### ResNet18 pretrained model
 
 ```bash=
 python ResNet18_pretrained_model.py --epochs 10 --save_model --save_csv
 ```
 
-- #### ResNet50 pretrained model
+### ResNet50 pretrained model
 
 ```bash=
 python ResNet50_pretrained_model.py --epochs 10 --save_model --save_csv
 ```
 
-- #### ResNet18 non-pretrained model
+### ResNet18 non-pretrained model
 
 ```bash=
 python ResNet18_nonpretrained_model.py --epochs 5 --save_model --save_csv
 ```
 
-- #### ResNet50 non-pretrained model
+### ResNet50 non-pretrained model
 
 ```bash=
 python ResNet50_nonpretrained_model.py --epochs 5 --save_model --save_csv
